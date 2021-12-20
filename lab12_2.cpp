@@ -47,6 +47,7 @@ void checkWinner(int p, int y){
 }
 
 int main(){	
+	srand(time(0));
 	int playerScore, yugiScore, playerAction, yugiAction;
 	int playerCards[3] = {drawCard(), drawCard(), 0};
 	int yugiCards[3] = {drawCard(), drawCard(), 0};
@@ -64,7 +65,8 @@ int main(){
 		playerCards[2] = drawCard();
 		cout << "Player draws the 3rd card!!!" << "\n";
 		cout << "Your 3rd card: " << cardNames[playerCards[2]] << "\n";
-		cout << "Your new score: " << calScore(playerCards[0],playerCards[1],playerCards[2]) << "\n";
+		playerScore = calScore(playerCards[0],playerCards[1],playerCards[2]);
+		cout << "Your new score: " << playerScore << "\n";
 	}
 	cout << "------------ Turn end -------------------\n\n";
 	
@@ -78,7 +80,8 @@ int main(){
 		yugiCards[2] = drawCard();
 		cout << "Yugi draws the 3rd card!!!\n";
 		cout << "Yugi's 3rd card: " << cardNames[yugiCards[2]] << "\n";
-		cout << "Yugi's new score: " << calScore(yugiCards[0],yugiCards[1],yugiCards[2]) << "\n";
+		yugiScore = calScore(yugiCards[0],yugiCards[1],yugiCards[2]);
+		cout << "Yugi's new score: " << yugiScore << "\n";
 	}
 	cout << "------------ Turn end -------------------\n";
 	
